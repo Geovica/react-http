@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { EEXIST } from 'constants'
+import axios from 'axios'
 
 export class PostForm extends Component {
 constructor(props) {
@@ -8,7 +8,8 @@ constructor(props) {
     this.state = {
          userId: '',
          title: '',
-         body: ''
+         body: '',
+         erroMsg:''
     }
 }
 
@@ -18,8 +19,16 @@ chnageHandler = (e) => {
 
 submitHandler = (e) => {
    e.preventDefault()
-   console.log(this.state)
-}
+    axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
+    .then(reponse => {
+        console.log(reponse)
+    }).catch(error => {
+        console.log(error)
+        this.setState({erroMsg:'Cant do Post request'})
+    })
+    }
+    
+
 
     render() {
         const {userId, title, body } = this.state
