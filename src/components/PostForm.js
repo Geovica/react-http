@@ -19,7 +19,7 @@ chnageHandler = (e) => {
 
 submitHandler = (e) => {
    e.preventDefault()
-    axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
+    axios.post('https://jsonplaceholder.typicode.om/posts', this.state)
     .then(reponse => {
         console.log(reponse)
     }).catch(error => {
