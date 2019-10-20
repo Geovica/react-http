@@ -15,6 +15,8 @@ class ClassLyfeCycle extends Component {
     }
     componentDidUpdate(prevProps, prevState) {
 
+
+        //conditionally run effects
         if(prevState.count !=this.state.count){
         document.title= `You Clicked ${this.state.count}`
         console.log('updating document title')
