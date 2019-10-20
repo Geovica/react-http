@@ -14,6 +14,7 @@ const HookMouse = () => {
     useEffect(()=> {
         window.addEventListener('mousemove', logMousePosition)
     },[] ) //Only rerender once
+            //mimic Component didmount
     return (
         <div>
              X- {x} Y-{y}
